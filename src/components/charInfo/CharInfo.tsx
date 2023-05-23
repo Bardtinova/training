@@ -8,15 +8,12 @@ interface PropsCard {
 
 const CharInfo = ({data}: PropsCard) => {
     console.log(data)
-    const [card, setCard] = useState(data)
-  
-    console.log(card)
-              
+                 
     //useEffect(()=>{ card }, [card])
    
-    //emojiLists.slice(0, card);
+    const dataShort = data.slice(0, 51);
 
-    const items = card.map((item: {
+    const items = dataShort.map((item: {
         title: string;
         symbol: string;
         keywords: string;}, i: number) => {
