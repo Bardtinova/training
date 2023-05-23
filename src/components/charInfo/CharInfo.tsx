@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import { ICard } from "../interfaces/ICard";
 
+import CharItem from "../charItem/CharItem";
+
 interface PropsCard {
     data: ICard[];
 }
@@ -9,7 +11,13 @@ interface PropsCard {
 const CharInfo = ({data}: PropsCard) => {
     console.log(data)
                  
-    //useEffect(()=>{ card }, [card])
+    useEffect(()=>{ 
+        window.addEventListener('click', (event) => {});
+        return () => {
+            window.removeEventListener('click', (event) => {});
+        }
+     }, [data])
+     const [card, setCard] = useState(true);
    
     const dataShort = data.slice(0, 51);
 
@@ -17,19 +25,15 @@ const CharInfo = ({data}: PropsCard) => {
         title: string;
         symbol: string;
         keywords: string;}, i: number) => {
-        return (
-            <li  key={i}
-                className="char__item">
-                <div className="char__name">{item.title}</div>
-                <div className="char__name">{item.symbol}</div>
-                <div className="char__name">{item.keywords}</div>
-                <button className="inner">Delete</button>
-            </li>
-        )
+         return (
+            <CharItem dataItem = {item} i={i}/>
+         )  
+            
+        
     })
            
     return (
-        <div className="char__list">
+         <div className="char__list">
                 <ul className="char__grid">
                     {items}
                 </ul>

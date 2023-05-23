@@ -10,6 +10,7 @@
     }
     &__grid {
         display: grid;
+        list-style-type: none;
         grid-template-columns: repeat(3, 200px);
         column-gap: 100px;
         row-gap: 30px;
