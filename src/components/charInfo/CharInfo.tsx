@@ -7,11 +7,12 @@ interface PropsCard {
 
 
 const CharInfo = ({data}: PropsCard) => {
-    
+    console.log(data)
     const [card, setCard] = useState(data)
-    
+  
+    console.log(card)
               
-     //useEffect(()=>{ card }, [card])
+    //useEffect(()=>{ card }, [card])
    
     //emojiLists.slice(0, card);
 

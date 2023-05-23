@@ -1,10 +1,12 @@
 import {useState} from 'react';
 import './search-panel.scss';
-import { ICard } from "../interfaces/ICard";
+
 
 interface PropsonUpdateSearch {
-    onUpdateSearch: any;
+    onUpdateSearch: (term: string) => void;
 }
+
+
 
 const SearchPanel = ({onUpdateSearch}:PropsonUpdateSearch) => {
 
@@ -16,17 +18,13 @@ const SearchPanel = ({onUpdateSearch}:PropsonUpdateSearch) => {
         setTerm(term);
         onUpdateSearch(term);
     }
-
-    
         return (
             <input type="text"
                     className="form-control search-input"
                     placeholder="Find emoji"
                     value = {term}
                     onChange={UpdateSearch}/>
-
         )
-   
 }
 
 export default SearchPanel;
