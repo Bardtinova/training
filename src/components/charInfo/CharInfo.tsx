@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import { ICard } from "../interfaces/ICard";
 
-import CharItem from "../charItem/CharItem";
+import CharItem from "../charItem/charItem";
 
 interface PropsCard {
     data: ICard[];
